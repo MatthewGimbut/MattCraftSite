@@ -9,6 +9,7 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\pages\" />
+    <None Remove="src\unmined\**" />
+    <TypeScriptConfiguration Remove="src\unmined\**" />
   </ItemGroup>
 </Project>

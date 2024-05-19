@@ -19,3 +19,8 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+.map-size {
+    max-height: 75%;
+    max-width: 75%;
+}

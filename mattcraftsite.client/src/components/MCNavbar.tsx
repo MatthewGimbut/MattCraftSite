@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
     Navbar,
     NavbarBrand,
@@ -13,32 +14,36 @@ export default function MCNavbar() {
     return (
         <Navbar isBordered maxWidth="full">
             <NavbarBrand>
-               <p className="font-bold text-inherit">ACME</p>
+                <Link color="foreground" href="/">
+                    <p className="font-bold text-inherit">MattCraft</p>
+                </Link>
             </NavbarBrand>
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem>
-                    <Link color="foreground" href="#">
+                    <Link color="foreground" href="/features">
                         Features
                     </Link>
                 </NavbarItem>
                 <NavbarItem isActive>
-                    <Link href="#" aria-current="page">
-                        Customers
+                    <Link color="foreground" href="/rules" aria-current="page">
+                        Rules
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color="foreground" href="#">
-                        Integrations
+                    <Link color="foreground" href="/installation">
+                        Installation
+                    </Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link color="foreground" href="/faq">
+                        FAQ
                     </Link>
                 </NavbarItem>
             </NavbarContent>
             <NavbarContent justify="end">
-                <NavbarItem className="hidden lg:flex">
-                    <Link href="#">Login</Link>
-                </NavbarItem>
                 <NavbarItem>
-                    <Button as={Link} color="primary" href="#" variant="flat">
-                        Sign Up
+                    <Button as={Link} color="primary" href="/map" variant="flat">
+                        View World Map
                     </Button>
                 </NavbarItem>
             </NavbarContent>
