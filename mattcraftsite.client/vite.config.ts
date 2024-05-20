@@ -46,6 +46,10 @@ export default defineConfig({
             '^/api/Unmined': {
                 target,
                 secure: false
+            },
+            '^/api/MattCraft': {
+                target,
+                secure: false
             }
         },
         port: 5173,

@@ -25,6 +25,10 @@ th, td {
     max-width: 75%;
 }
 
+.card-height {
+    height: 400px;
+}
+
 .home-carousel-height {
     width: 80%;
     height: 80%

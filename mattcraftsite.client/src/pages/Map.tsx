@@ -7,7 +7,7 @@ export default function Map() {
 
                 <UnminedMap></UnminedMap>
 
-            <p>Map courtesy of <Link href="https://unmined.net/">uNmINeD</Link></p>
+                <p>Image generation by <Link href="https://unmined.net/">uNmINeD</Link></p>
         </div>
     );
 }

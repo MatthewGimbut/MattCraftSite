@@ -2,16 +2,21 @@ import { Spacer } from "@nextui-org/spacer";
 import { Image } from "@nextui-org/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import "../output.css";
+import { Code } from "@nextui-org/code";
+import  MattCraftStatus from "../components/MattCraftStatus";
+
+const serverLocation: string = "mc.server.matt-craft.com:25565";
 
 export default function Home() {
 
     return (
-        <div className="container">
+        <div className="">
             <div>
                 <div>
                     <Spacer y={ 10 } ></Spacer>
                     <h1>MattCraft 1.20.1</h1>
-                    <p className="text-xl">mc.server.matt-craft.com:25565</p>
+                    <p className="text-xl">An engineering-focused Forge modpack</p>
                     <Spacer y={10} ></Spacer>
                     <div className="flex justify-center p-4">
                         <div className="p-4 flex">
@@ -24,9 +29,14 @@ export default function Home() {
                                 <Spacer y={5} ></Spacer>
                                 <p>With unskippable blood moons, mutant creatures, and randomly generated minibosses, there's no shortage of challenge.</p>
                                 <Spacer y={5} ></Spacer>
+                                <p>The official MattCraft server at <Code color="primary" className="hover:font-bold">{serverLocation}</Code> runs daily from roughly 8:00am to 11:00pm Pacific Time (05:00-15:00 UTC). </p>
+                                <Spacer y={20} ></Spacer>
+                                <div className="flex justify-center">
+                                    <MattCraftStatus></MattCraftStatus>
+                                </div>
                             </div>
                             <div className="p-2 home-carousel-height flex justify-center">
-                                <Carousel showArrows={true} autoPlay={true} infiniteLoop={true} interval={ 5000 } >
+                                <Carousel showArrows={true} showThumbs={ false } autoPlay={true} infiniteLoop={true} interval={ 5000 } >
                                     <div>
                                         <Image src="/images/entering.jpg" alt=""></Image>
                                     </div>
@@ -47,8 +57,8 @@ export default function Home() {
 
                     </div>
                 </div>
-                <Spacer y={ 20 } ></Spacer>
-                <p className="p-4 text-xl">Check out the installation tab for instructions on how to join.</p>
+                <Spacer y={ 7 } ></Spacer>
+                <p className="p-4 text-xl">Check out the installation tab for instructions on how to join or the world map to see everyone's creations updated daily.</p>
             </div>
         </div>
     );
