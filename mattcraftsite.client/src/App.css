@@ -33,3 +33,17 @@ th, td {
     width: 80%;
     height: 80%
 }
+
+.server-status-text {
+    font-family: MinecraftFont;
+    color: yellow;
+}
+
+.minecraft-font {
+    font-family: MinecraftFont;
+}
+
+@font-face {
+    font-family: "MinecraftFont";
+    src: local("MinecraftFont"), url(../public/fonts/minecraft.woff) format('woff');
+}

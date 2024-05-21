@@ -1778,12 +1778,6 @@ video {
   margin-left: calc(0.125rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2322,6 +2316,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-minecraft-dirt {
+  background-image: url('/public/images/minecraft-dirt.png');
+}
+
 .bg-stripe-gradient {
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
 }
@@ -2540,10 +2538,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .text-start {
@@ -3599,6 +3593,17 @@ th, td {
 .home-carousel-height {
   width: 80%;
   height: 80%
+}
+
+.server-status-text {
+  font-family: MinecraftFont;
+  color: yellow;
+}
+
+@font-face {
+  font-family: "MinecraftFont";
+
+  src: local("MinecraftFont"), url(../public/fonts/MinecraftRegular-Bmg3.otf) format('otf');
 }
 
 .placeholder\:text-danger::-moz-placeholder {

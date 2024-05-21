@@ -10,7 +10,11 @@ export default {
         "./src/**/*.{html,js,ts,tsx,jsx}"
     ],
   theme: {
-    extend: {},
+      extend: {
+          backgroundImage: {
+              'minecraft-dirt': "url('/public/images/minecraft-dirt.png')"
+          }
+      },
     },
     darkMode: "class",
   plugins: [nextui()],

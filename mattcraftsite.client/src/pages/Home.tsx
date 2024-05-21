@@ -15,12 +15,12 @@ export default function Home() {
             <div>
                 <div>
                     <Spacer y={ 10 } ></Spacer>
-                    <h1>MattCraft 1.20.1</h1>
+                    <h1 className="minecraft-font">MattCraft 1.20.1</h1>
                     <p className="text-xl">An engineering-focused Forge modpack</p>
                     <Spacer y={10} ></Spacer>
                     <div className="flex justify-center p-4">
                         <div className="p-4 flex">
-                            <div className="p-4 text-left text-lg">
+                            <div className="grid grid-cols-1 p-4 text-left text-lg">
                                 <p>MattCraft is a modded Minecraft server focused on using building/engineering mods to survive in a world with a much higher difficulty level than vanilla Minecraft.</p>
                                 <Spacer y={10} ></Spacer>
                                 <p>Use technology mods including Create and Immersive Engineering to build complex solutions for survival, automating away the pain.</p>
@@ -57,7 +57,6 @@ export default function Home() {
 
                     </div>
                 </div>
-                <Spacer y={ 7 } ></Spacer>
                 <p className="p-4 text-xl">Check out the installation tab for instructions on how to join or the world map to see everyone's creations updated daily.</p>
             </div>
         </div>

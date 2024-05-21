@@ -15,7 +15,7 @@ export default function MCNavbar() {
         <Navbar isBordered maxWidth="full">
             <NavbarBrand>
                 <Link color="foreground" href="/">
-                    <p className="font-bold text-inherit">MattCraft</p>
+                    <p className="font-bold text-inherit minecraft-font">MattCraft</p>
                 </Link>
             </NavbarBrand>
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
