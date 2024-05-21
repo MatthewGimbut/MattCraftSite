@@ -1,4 +1,5 @@
 export interface ServerStatus {
+    isOnline: boolean;
     address: string;
     port: number;
     gamemode: string;

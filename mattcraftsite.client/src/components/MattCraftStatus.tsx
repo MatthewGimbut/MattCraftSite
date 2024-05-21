@@ -1,9 +1,11 @@
 import { ServerStatus } from "../models/ServerStatus";
 import { useState, useEffect } from "react";
-import { Button, Card, Image, Popover, PopoverContent, PopoverTrigger, Skeleton, Divider, CardBody } from "@nextui-org/react";
+import { Button, Card, Image, Popover, PopoverContent, PopoverTrigger, Skeleton, Divider, CardBody, Spinner } from "@nextui-org/react";
 import React from "react";
 import '../App.css';
 
+const checkEmoji: number = 0x2705;
+const xEmoji: number = 0x274C;
 
 export default function MattCraftStatus() {
 
@@ -33,16 +35,24 @@ export default function MattCraftStatus() {
         return list;
     }
 
+    if (!isLoaded) {
+        return (
+            <div>
+                <Spinner size="lg">Fetching server status... this will take a few seconds!</Spinner>
+            </div>
+        );
+    }
+
     return (
         <div className="w-4/5 gap-3">
             <Card className="grid grid-cols-1 space-y-3 p-3 bg-minecraft-dirt server-status-text " radius="lg">
                 <CardBody className="overflow-visible py-2">
                     <Skeleton isLoaded={isLoaded} className="rounded-lg ">
                         <div className="grid grid-cols-3">
-                            <Image src={"data:image/jpeg;base64," + status?.favicon}></Image>
+                            <Image src={status?.favicon}></Image>
                             <div className="server-status-text flex justify-center">
-                                <p className="text-center text-small">{status ? String.fromCodePoint(0x2705) : String.fromCodePoint(0x274C)}</p>
-                                <p className="text-center text-small">{status ? "Online" : "Offline"}</p>
+                                <p className="text-center text-small">{status?.isOnline ? String.fromCodePoint(checkEmoji) : String.fromCodePoint(xEmoji)}</p>
+                                <p className="text-center text-small">{status?.isOnline ? " Online" : " Offline"}</p>
                             </div>
                             <div className="float-right">
                                 <Popover key="success" color="success" placement="top">
@@ -77,17 +87,17 @@ export default function MattCraftStatus() {
                         <div className="grid grid-cols-3 justify-items-center">
                             <Skeleton isLoaded={isLoaded} className="w-3/5 rounded-lg">
                                 <div className="rounded-lg">
-                                    <p className="text-base p-2 text-center">Latency: {status?.latency}ms</p>
+                                    <p className="text-sm p-2 text-center">Latency: {status?.latency ? status.latency + " ms" : "n/a" }</p>
                                 </div>
                             </Skeleton>
                             <Skeleton isLoaded={isLoaded} className="w-3/5 rounded-lg">
                                 <div className="rounded-lg">
-                                    <p className="text-base p-2 text-center">Version: {status?.version}</p>
+                                    <p className="text-sm p-2 text-center">Version: {status?.version}</p>
                                 </div>
                             </Skeleton>
                             <Skeleton isLoaded={isLoaded} className="w-4/5 rounded-lg">
                                 <div className="rounded-lg">
-                                    <p className="text-base p-2 text-center">Gamemode: {status?.gamemode}</p>
+                                    <p className="text-sm p-2 text-center">Gamemode: {status?.gamemode}</p>
                                 </div>
                             </Skeleton>
                         </div>

@@ -2588,6 +2588,11 @@ video {
   line-height: var(--nextui-line-height-medium);
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-small {
   font-size: var(--nextui-font-size-small);
   line-height: var(--nextui-line-height-small);
@@ -3600,10 +3605,14 @@ th, td {
   color: yellow;
 }
 
+.minecraft-font {
+  font-family: MinecraftFont;
+}
+
 @font-face {
   font-family: "MinecraftFont";
 
-  src: local("MinecraftFont"), url(../public/fonts/MinecraftRegular-Bmg3.otf) format('otf');
+  src: local("MinecraftFont"), url(../public/fonts/minecraft.woff) format('woff');
 }
 
 .placeholder\:text-danger::-moz-placeholder {
