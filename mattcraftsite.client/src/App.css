@@ -1,0 +1,49 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+    margin: 0 auto;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #F2F2F2;
+}
+
+tr:nth-child(odd) {
+    background: #FFF;
+}
+
+th, td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.map-size {
+    max-height: 75%;
+    max-width: 75%;
+}
+
+.card-height {
+    height: 400px;
+}
+
+.home-carousel-height {
+    width: 80%;
+    height: 80%
+}
+
+.server-status-text {
+    font-family: MinecraftFont;
+    color: #FFFAA0;
+}
+
+.minecraft-font {
+    font-family: MinecraftFont;
+}
+
+@font-face {
+    font-family: "MinecraftFont";
+    src: local("MinecraftFont"), url(../public/fonts/minecraft.woff) format('woff');
+}
