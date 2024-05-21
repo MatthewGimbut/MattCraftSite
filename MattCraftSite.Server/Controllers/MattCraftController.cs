@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO.Compression;
 using System.Net;
 using System.Transactions;
+using MineStatLib;
+using Microsoft.VisualBasic;
 
 namespace MattCraftSite.Server.Controllers
 {
@@ -23,27 +25,34 @@ namespace MattCraftSite.Server.Controllers
         [HttpGet]
         public ServerStatus Get()
         {
-            byte[] iconBytes = System.IO.File.ReadAllBytes("C:\\Users\\mattg\\workspace\\MinecraftServer1-20-1\\forge\\server-icon.png");
+            ServerStatus status = new();
+            MineStat mineStat = new(status.Address, 25565);
 
-            Thread.Sleep(2000);
-
-            ServerStatus status = new ServerStatus
+            if (mineStat.ServerUp)
             {
-                Address = "mc.server.matt-craft.com",
-                Port = 25565,
-                Gamemode = "Survival",
-                Motd = "MattCraft MOTD",
-                Latency = 32,
-                Version = "1.20.1",
-                CurrentPlayers = 1,
-                MaxPlayers = 32,
-                PlayerList = new[]
-                {
-                    "Brimast_mg"
-                },
-                Favicon = Convert.ToBase64String(iconBytes)
-            };
+                status.IsOnline = true;
+                
+                // Turns out that at the moment, Gamemode is Bedrock specific.
+                // Since the MattCraft server is Java edition, this won't work.
+                // I'll be leaving it at the default value of "Survival".
+                //status.Gamemode = mineStat.Gamemode;
+                
+                status.Motd = mineStat.Stripped_Motd;
+                status.Latency = mineStat.Latency;
+                status.Version = mineStat.Version;
+                status.CurrentPlayers = mineStat.CurrentPlayersInt;
+                status.MaxPlayers = mineStat.MaximumPlayersInt;
 
+                status.PlayerList = 
+                    (mineStat.PlayerList != null && mineStat.PlayerList.Length >= 0) 
+                    ? new List<string>(mineStat.PlayerList) : [];
+
+                status.Favicon = mineStat.Favicon;
+            }
+            else
+            {
+                status.IsOnline = false;
+            }
 
             return status;
         }
