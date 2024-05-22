@@ -21,13 +21,13 @@ export default function Home() {
                     <div className="flex justify-center p-4">
                         <div className="p-4 flex">
                             <div className="grid grid-cols-1 p-4 text-left text-lg">
-                                <p>MattCraft is a modded Minecraft server focused on using building/engineering mods to survive in a world with a much higher difficulty level than vanilla Minecraft.</p>
-                                <Spacer y={10} ></Spacer>
-                                <p>Use technology mods including Create and Immersive Engineering to build complex solutions for survival, automating away the pain.</p>
+                                <p>MattCraft is a modded Minecraft server that centers around building and engineering solutions to automate survival in a setting with a significantly higher difficulty level than vanilla Minecraft.</p>
                                 <Spacer y={5} ></Spacer>
-                                <p>Apply that technology across new dimensions like the Aether, Bumblezone, Twilight Forest, and Undergarden.</p>
+                                <p>Explore technology mods such as Create, Ad Astra, Immersive Engineering, and Refined Storage to create intricate systems to automate the gathering of resources and protection of your base.</p>
                                 <Spacer y={5} ></Spacer>
-                                <p>With unskippable blood moons, mutant creatures, and randomly generated minibosses, there's no shortage of challenge.</p>
+                                <p>Explore beyond the mundane realms of vanilla Minecraft. Venture into new dimensions like the Aether, the Bumblezone, the Twilight Forest, and the Undergarden. </p>
+                                <Spacer y={5} ></Spacer>
+                                <p>Defend your base for unskippable blood moons, where mutant creatures and randomly generated bosses will test just how well you can prepare.</p>
                                 <Spacer y={5} ></Spacer>
                                 <p>The official MattCraft server at <Code color="primary" className="hover:font-bold">{serverLocation}</Code> runs daily from roughly 8:00am to 11:00pm Pacific Time (05:00-15:00 UTC). </p>
                                 <Spacer y={20} ></Spacer>
