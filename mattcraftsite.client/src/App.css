@@ -43,6 +43,32 @@ th, td {
     font-family: MinecraftFont;
 }
 
+.features-div-height {
+    min-height:40%;
+    height: 75%;
+}
+
+.features-div-height-lg {
+    height: 50%;
+}
+
+.search-height {
+    min-height: 100px;
+    height: 80%;
+}
+
+.right-padding {
+    padding-right: 5px;
+}
+
+.green-button {
+    background-color: #2cbd54 !important;
+}
+
+.gray-button {
+    background-color: #dcdcdc !important;
+}
+
 @font-face {
     font-family: "MinecraftFont";
     src: local("MinecraftFont"), url(../public/fonts/minecraft.woff) format('woff');

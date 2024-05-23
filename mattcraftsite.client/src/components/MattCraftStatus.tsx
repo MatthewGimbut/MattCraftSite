@@ -57,7 +57,7 @@ export default function MattCraftStatus() {
                             <div className="float-right">
                                 <Popover key="success" color="success" placement="top">
                                     <PopoverTrigger>
-                                        <Button className="float-right" color="success"><p>{status?.currentPlayers}/{status?.maxPlayers} players</p></Button>
+                                        <Button className="float-right green-button" color="success"><p>{status?.currentPlayers}/{status?.maxPlayers} players</p></Button>
                                     </PopoverTrigger>
                                     <PopoverContent>
                                         <div className="">

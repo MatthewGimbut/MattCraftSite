@@ -13,7 +13,7 @@ namespace MattCraftSite.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class MattCraftController : ControllerBase
+    public class MattCraftController : AzureController
     {
         private readonly ILogger<MattCraftController> _logger;
 
@@ -55,6 +55,19 @@ namespace MattCraftSite.Server.Controllers
             }
 
             return status;
+        }
+
+        [HttpGet("ModList")]
+        public async Task<IActionResult> GetModListAsync()
+        {
+            string containerName = "modlist";
+            string blobName = "modlist.json";
+
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+            BlobClient blobClient = containerClient.GetBlobClient(blobName);
+            BlobDownloadResult content = await blobClient.DownloadContentAsync();
+
+            return Ok(content.Content.ToString());
         }
     }
 }
