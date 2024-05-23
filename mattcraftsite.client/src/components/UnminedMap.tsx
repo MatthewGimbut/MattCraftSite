@@ -34,7 +34,7 @@ export default function UnminedMap() {
     return (
         <div>
             <TransformWrapper>
-                {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                {({ zoomIn, zoomOut, resetTransform }) => (
                     <React.Fragment>
                         <div className="flex justify-center">
                             <div className="container h-fit px-4 map-size place-content-center">
