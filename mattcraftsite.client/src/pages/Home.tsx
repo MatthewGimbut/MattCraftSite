@@ -29,7 +29,7 @@ export default function Home() {
                                 <p>Defend your base for unskippable blood moons, where mutant creatures and randomly generated bosses will test just how well you can prepare.</p>
                                 <Spacer y={5} ></Spacer>
                                 <p>The official MattCraft server at <Code color="primary" className="hover:font-bold">{serverLocation}</Code> runs daily from roughly 8:00am to 11:00pm Pacific Time (05:00-15:00 UTC). </p>
-                                <Spacer y={20} ></Spacer>
+                                <Spacer y={10} ></Spacer>
                                 <div className="flex justify-center">
                                     <MattCraftStatus></MattCraftStatus>
                                 </div>
