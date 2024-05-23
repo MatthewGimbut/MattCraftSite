@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import React from "react";
 import '../App.css';
 import { Mod } from "../models/Mod";
 import { Input, Link, Spacer } from "@nextui-org/react";
