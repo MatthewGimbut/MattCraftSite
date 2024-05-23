@@ -61,6 +61,13 @@ th, td {
     padding-right: 5px;
 }
 
+.green-button {
+    background-color: #2cbd54 !important;
+}
+
+.gray-button {
+    background-color: #dcdcdc !important;
+}
 
 @font-face {
     font-family: "MinecraftFont";

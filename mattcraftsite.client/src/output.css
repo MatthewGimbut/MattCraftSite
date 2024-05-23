@@ -1812,6 +1812,10 @@ video {
   align-self: center;
 }
 
+.justify-self-center {
+  justify-self: center;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -2851,6 +2855,10 @@ video {
   text-decoration-line: none;
 }
 
+.decoration-green-500 {
+  text-decoration-color: #22c55e;
+}
+
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -3643,11 +3651,29 @@ th, td {
 }
 
 .features-div-height {
-  height: 40%;
+  min-height:40%;
+  height: 75%;
+}
+
+.features-div-height-lg {
+  height: 50%;
 }
 
 .search-height {
-  min-height: 40%;
+  min-height: 100px;
+  height: 80%;
+}
+
+.right-padding {
+  padding-right: 5px;
+}
+
+.green-button {
+  background-color: #2cbd54 !important;
+}
+
+.gray-button {
+  background-color: #dcdcdc !important;
 }
 
 @font-face {

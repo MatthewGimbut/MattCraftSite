@@ -32,7 +32,7 @@ export default function Features() {
     }
 
     return (
-        <div className="features-div-height p-1">
+        <div className="features-div-height">
             <div className="self-start">
                 <Spacer y={10} ></Spacer>
                 <h1 className="minecraft-font ">Mod List</h1>

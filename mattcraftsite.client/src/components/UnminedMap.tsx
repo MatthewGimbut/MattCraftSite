@@ -39,9 +39,9 @@ export default function UnminedMap() {
                         <div className="flex justify-center">
                             <div className="container h-fit px-4 map-size place-content-center">
                                 <div className="tools sm:flex gap-4 place-content-center p-2">
-                                    <Button onClick={() => zoomIn()}>Zoom In</Button>
-                                    <Button onClick={() => zoomOut()}>Zoom Out</Button>
-                                    <Button onClick={() => resetTransform()}>Reset</Button>
+                                    <Button className="gray-button" onClick={() => zoomIn()}>Zoom In</Button>
+                                    <Button className="gray-button" onClick={() => zoomOut()}>Zoom Out</Button>
+                                    <Button className="gray-button" onClick={() => resetTransform()}>Reset</Button>
                                 </div>
                                 <TransformComponent>
                                     <img className="p-1" src={img} alt="Map of the current MattCraft server world" />
