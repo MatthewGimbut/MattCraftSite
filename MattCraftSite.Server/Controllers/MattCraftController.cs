@@ -25,6 +25,8 @@ namespace MattCraftSite.Server.Controllers
         [HttpGet]
         public ServerStatus Get()
         {
+            _logger.LogInformation("Received request to get the server status.");
+
             ServerStatus status = new();
             MineStat mineStat = new(status.Address, 25565);
 
@@ -48,11 +50,15 @@ namespace MattCraftSite.Server.Controllers
                     ? new List<string>(mineStat.PlayerList) : [];
 
                 status.Favicon = mineStat.Favicon;
+                _logger.LogInformation("Server is online.");
             }
             else
             {
                 status.IsOnline = false;
+                _logger.LogInformation("Server is offline.");
             }
+
+            _logger.LogInformation("Completed request to get the server status.");
 
             return status;
         }
@@ -60,12 +66,16 @@ namespace MattCraftSite.Server.Controllers
         [HttpGet("ModList")]
         public async Task<IActionResult> GetModListAsync()
         {
+            _logger.LogInformation("Received request to get the mod list.");
             string containerName = "modlist";
             string blobName = "modlist.json";
 
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
             BlobDownloadResult content = await blobClient.DownloadContentAsync();
+
+            _logger.LogInformation("Completed request to get the mod list.");
+
 
             return Ok(content.Content.ToString());
         }

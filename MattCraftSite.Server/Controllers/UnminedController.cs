@@ -22,12 +22,15 @@ namespace MattCraftSite.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            _logger.LogInformation("Received request for the unmined map.");
             string containerName = "map";
             string blobName = "map.jpg";
 
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
             BlobDownloadResult content = await blobClient.DownloadContentAsync();
+
+            _logger.LogInformation("Completed request for the unmined map.");
 
             return Ok(content.Content.ToStream());
         }
