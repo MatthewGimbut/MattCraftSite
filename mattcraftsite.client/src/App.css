@@ -69,6 +69,10 @@ th, td {
     background-color: #dcdcdc !important;
 }
 
+.exclamation-mark {
+    color: red;
+}
+
 @font-face {
     font-family: "MinecraftFont";
     src: local("MinecraftFont"), url(../public/fonts/minecraft.woff) format('woff');
