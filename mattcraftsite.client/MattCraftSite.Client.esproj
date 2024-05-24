@@ -8,6 +8,9 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
+  <PropertyGroup>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
   <ItemGroup>
     <None Remove="src\unmined\**" />
     <TypeScriptConfiguration Remove="src\unmined\**" />
