@@ -1,4 +1,5 @@
 import { Spacer, Image, Link } from "@nextui-org/react";
+import '../App.css';
 
 const checkEmoji: number = 0x2714;
 
@@ -21,6 +22,8 @@ export default function Installation() {
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Click "Install" and if prompted, "Open link". This will open the modpack in the CurseForge client and begin downloading the mods.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Click the three dots next to the play button, then "Profile Options", and then uncheck "Use System Memory Settings". Drag the slider to anywhere over 8000MB.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Once complete, click the modpack and then click play. You're now ready to join the server!</p>
+                        <p className="p-1 exclamation-mark">{String.fromCodePoint(checkEmoji)} If you see a red X after adding the server to Minecraft, it is safe to ignore. You can still connect.</p>
+
                     </div>
                     <div className="p-2">
                         <p className="text-xl underline minecraft-font">Install shaders [optional]</p>
