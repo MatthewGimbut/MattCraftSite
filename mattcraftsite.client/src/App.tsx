@@ -12,7 +12,7 @@ import NotFound from './pages/NotFound.tsx';
 
 export default function App() {
     return (
-        <div style={{ height: '100vh' }}>
+        <div style={{ minHeight: '100vh' }}>
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
