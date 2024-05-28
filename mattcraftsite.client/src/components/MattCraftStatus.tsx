@@ -44,7 +44,7 @@ export default function MattCraftStatus() {
     }
 
     return (
-        <div className="w-4/5 gap-3">
+        <div style={{ minWidth: '450px' }} className="w-4/5 gap-3">
             <Card className="grid grid-cols-1 space-y-3 p-3 bg-minecraft-dirt server-status-text " radius="lg">
                 <CardBody className="overflow-visible py-2">
                     <Skeleton isLoaded={isLoaded} className="rounded-lg ">
@@ -87,17 +87,20 @@ export default function MattCraftStatus() {
                         <div className="grid grid-cols-3 justify-items-center">
                             <Skeleton isLoaded={isLoaded} className="w-3/5 rounded-lg">
                                 <div className="rounded-lg">
-                                    <p className="text-sm p-2 text-center">Latency: {status?.latency ? status.latency + " ms" : "n/a" }</p>
+                                    <p className="text-xs p-2 text-center">Latency</p>
+                                    <p className="text-xs p-2 text-center">{status?.latency ? status.latency + " ms" : "n/a"}</p>
                                 </div>
                             </Skeleton>
                             <Skeleton isLoaded={isLoaded} className="w-3/5 rounded-lg">
                                 <div className="rounded-lg">
-                                    <p className="text-sm p-2 text-center">Version: {status?.version}</p>
+                                    <p className="text-xs p-2 text-center">Version</p>
+                                    <p className="text-xs p-2 text-center">{status?.version}</p>
                                 </div>
                             </Skeleton>
                             <Skeleton isLoaded={isLoaded} className="w-4/5 rounded-lg">
                                 <div className="rounded-lg">
-                                    <p className="text-sm p-2 text-center">Gamemode: {status?.gamemode}</p>
+                                    <p className="text-xs p-2 text-center">Gamemode</p>
+                                    <p className="text-xs p-2 text-center">{status?.gamemode}</p>
                                 </div>
                             </Skeleton>
                         </div>
