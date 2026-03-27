@@ -17,7 +17,8 @@ export default function Rules() {
                     <p>No exploiting of bugs/glitches. This applies to both vanilla content and modded content.</p>
                     <p>The use of autoclickers/scripting is prohibited.</p>
                     <p>No harassment, slurs, etc.</p>
-                    <p>Use of proximity voice chat is not required, but is storngly encouraged.</p>
+                    <p>Use of proximity voice chat is not required, but is strongly encouraged.</p>
+                    <p>The railroads belong to everybody. Respect them and don't damage the train lines.</p>
                 </div>
                 <div>
                     <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true} interval={5000} >
