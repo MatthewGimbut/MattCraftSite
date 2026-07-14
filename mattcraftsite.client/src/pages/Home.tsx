@@ -15,8 +15,8 @@ export default function Home() {
             <div>
                 <div>
                     <Spacer y={ 10 } ></Spacer>
-                    <h1 className="minecraft-font">MattCraft 1.20.1</h1>
-                    <p className="text-xl">An engineering-focused Forge modpack</p>
+                    <h1 className="minecraft-font">MattCraft 1.21.1</h1>
+                    <p className="text-xl">An engineering-focused NeoForged modpack</p>
                     <div className="flex justify-center p-4">
                         <div className="p-4 flex">
                             <div className="grid grid-cols-1 p-2 text-left text-lg w-2/5">

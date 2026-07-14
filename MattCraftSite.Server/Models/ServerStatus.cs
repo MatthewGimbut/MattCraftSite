@@ -34,7 +34,7 @@ namespace MattCraftSite.Server.Models
             MaxPlayers = 32;
             Gamemode = "Survival";
             PlayerList = new List<string>();
-            Version = "1.20.1";
+            Version = "1.21.1";
         }
     }
 }

@@ -15,7 +15,7 @@ export default function Faq() {
             <div className="grid grid-cols-2 p-4 w-4/5 justify-self-center">
                 <div className="text-left text-xl p-4">
                     <Accordion variant="bordered">
-                        <AccordionItem key="1" title="Why does my game crash when launching Forge?" className="p-2">
+                        <AccordionItem key="1" title="Why does my game crash when launching NeoForged?" className="p-2">
                             <p>You probably just need to allocate more RAM. Click the three vertical dots near the "Play" button for the modpack in the CurseForge launcher.
                                 Click "Profile Options". Uncheck "Use System Memory Settings" and drag the slider to somewhere between 8,000MB to 10,000MB.</p>
                         </AccordionItem>
