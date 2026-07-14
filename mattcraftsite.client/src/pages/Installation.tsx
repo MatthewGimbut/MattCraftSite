@@ -15,26 +15,24 @@ export default function Installation() {
                 <div className="grid grid-cols-2 p-2 text-left">
                     <div className="p-2">
                         <p className="text-xl underline minecraft-font">Install the mod pack</p>
-                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Download and install <Link isExternal href="https://www.azul.com/downloads/?version=java-17-lts&package=jdk#zulu">Java 17</Link> if it or a newer version isn't already installed on your computer.</p>
+                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Download and install <Link isExternal href="https://adoptium.net/temurin/releases/?version=21">Java 21</Link> if it or a newer version isn't already installed on your computer.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Download the <Link isExternal href="https://download.curseforge.com/">CurseForge client</Link>.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Navigate to the <Link isExternal href="https://www.curseforge.com/minecraft/modpacks/matt-craft-modpack">MattCraft</Link> modpack.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Click files and select the most recent version.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Click "Install" and if prompted, "Open link". This will open the modpack in the CurseForge client and begin downloading the mods.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Click the three dots next to the play button, then "Profile Options", and then uncheck "Use System Memory Settings". Drag the slider to anywhere over 8000MB.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Once complete, click the modpack and then click play. You're now ready to join the server!</p>
-                        <p className="p-1 exclamation-mark">{String.fromCodePoint(checkEmoji)} If you see a red X after adding the server to Minecraft, it is safe to ignore. You can still connect.</p>
-
                     </div>
                     <div className="p-2">
                         <p className="text-xl underline minecraft-font">Install shaders [optional]</p>
                         <p className="">Optifine is the popular choice but it has many compatibility issues and will likely lead to crashes with the modpack. Sodium, Iris, and Create compatibility mods are already bundled into matt-craft instead.</p>
                         <Spacer y={2} ></Spacer>
-                        <p>Matt-craft also contains our recommended shader pack. There are two versions of Complementary shaders included - you can enable them through the shaders menu in your video settings.</p>
+                        <p>Matt-craft also contains our recommended shader pack. There are two versions of Complementary shaders included. You can enable them through the shaders menu in your video settings.</p>
                         <p>Other packs can be downloaded and enabled the same way after copying the .zip into your shader directory.</p>
                     </div>
                     <div className="p-2">
                         <p className="text-xl underline minecraft-font">Configure your game [optional]</p>
-                        <p className="">With over 150 mods, there are a lot of overlapping keybindings. These can all be managed in your control settings and are sorted by mod name. Here are a few suggestions to get you started...</p>
+                        <p className="">With over 200 mods, there are a lot of overlapping keybindings. These can all be managed in your control settings and are sorted by mod name. Here are a few suggestions to get you started...</p>
                         <Spacer y={2} ></Spacer>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Sophisticated Backpacks - Bind "Open Backpack". By default, it's "B" which conflicts with other mods.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Voice Chat - Bind "Voice Chat Settings" and "Push To Talk".</p>

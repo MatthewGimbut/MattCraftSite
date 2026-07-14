@@ -22,7 +22,7 @@ export default function Home() {
                             <div className="grid grid-cols-1 p-2 text-left text-lg w-2/5">
                                 <p>MattCraft is a modded Minecraft server that centers around building and engineering solutions to automate survival in a setting with a significantly higher difficulty level than vanilla Minecraft.</p>
                                 <Spacer y={5} ></Spacer>
-                                <p>Explore technology mods such as Create, Ad Astra, Immersive Engineering, and Refined Storage to create intricate systems to automate the gathering of resources and protection of your base.</p>
+                                <p>Explore technology mods such as Create and Refined Storage to create intricate systems to automate the gathering of resources and protection of your base.</p>
                                 <Spacer y={5} ></Spacer>
                                 <p>Explore beyond the mundane realms of vanilla Minecraft. Venture into new dimensions like the Aether, the Bumblezone, the Twilight Forest, and the Undergarden. </p>
                                 <Spacer y={5} ></Spacer>
