@@ -27,20 +27,16 @@ export default function Installation() {
                     </div>
                     <div className="p-2">
                         <p className="text-xl underline minecraft-font">Install shaders [optional]</p>
-                        <p className="">Optifine is the popular choice but it has many compatibility issues and will likely lead to crashes with the modpack. We recommend the following if you're interested in shaders.</p>
+                        <p className="">Optifine is the popular choice but it has many compatibility issues and will likely lead to crashes with the modpack. Sodium, Iris, and Create compatibility mods are already bundled into matt-craft instead.</p>
                         <Spacer y={2} ></Spacer>
-                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Download the <Link isExternal href="https://www.curseforge.com/minecraft/mc-mods/oculus/files/4952626">Oculus</Link> and <Link isExternal href="https://www.curseforge.com/minecraft/mc-mods/embeddium/files/4949986">Embeddium</Link> .jar files for Minecraft version 1.20.1.</p>
-                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Download the shader pack of your choice.</p>
-                        <p className="p-1">{String.fromCodePoint(checkEmoji)} In the CurseForge client, select the modpack and click "Open Folder" in the options menu next to "Play".</p>
-                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Put the two .jar files from step 0 in the "mods" folder. These mods are clientside only and will not affect the modpack installation.</p>
-                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Put your shaderpack .zip in the "shaderpacks" folder.</p>
-                        <p>You can now launch the game and consider your shaders in the "Video Settings..." option in Minecraft.</p>
+                        <p>Matt-craft also contains our recommended shader pack. There are two versions of Complementary shaders included - you can enable them through the shaders menu in your video settings.</p>
+                        <p>Other packs can be downloaded and enabled the same way after copying the .zip into your shader directory.</p>
                     </div>
                     <div className="p-2">
                         <p className="text-xl underline minecraft-font">Configure your game [optional]</p>
                         <p className="">With over 150 mods, there are a lot of overlapping keybindings. These can all be managed in your control settings and are sorted by mod name. Here are a few suggestions to get you started...</p>
                         <Spacer y={2} ></Spacer>
-                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Sophisticated Backpacks - Bind "Open Backpack".</p>
+                        <p className="p-1">{String.fromCodePoint(checkEmoji)} Sophisticated Backpacks - Bind "Open Backpack". By default, it's "B" which conflicts with other mods.</p>
                         <p className="p-1">{String.fromCodePoint(checkEmoji)} Voice Chat - Bind "Voice Chat Settings" and "Push To Talk".</p>
                         <Spacer y={5} ></Spacer>
                     </div>
