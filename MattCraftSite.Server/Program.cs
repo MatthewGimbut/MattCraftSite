@@ -24,9 +24,12 @@ namespace MattCraftSite.Server
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                // Skip HTTPS redirect in development for local testing
             }
-
-            app.UseHttpsRedirection();
+            else
+            {
+                app.UseHttpsRedirection();
+            }
 
             app.UseAuthorization();
 

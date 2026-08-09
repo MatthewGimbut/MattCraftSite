@@ -1,11 +1,5 @@
-﻿using Azure;
 using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
-using Azure.Storage.Sas;
 using Microsoft.AspNetCore.Mvc;
-using System.IO.Compression;
-using System.Net;
-using System.Transactions;
 
 namespace MattCraftSite.Server.Controllers
 {
@@ -21,43 +15,40 @@ namespace MattCraftSite.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             _logger.LogInformation("Received request for the unmined map.");
-            string containerName = "map";
-            string blobName = "index.html";
+            string indexUrl = Url.Action(nameof(GetBlob), "Unmined", new { blobName = "index.html" });
+            return Ok(new { url = indexUrl });
+        }
+
+        [HttpGet("{*blobName}")]
+        public async Task<IActionResult> GetBlob(string blobName)
+        {
+            const string containerName = "map";
 
             try
             {
                 BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
                 BlobClient blobClient = containerClient.GetBlobClient(blobName);
 
-                // Check if the blob exists
                 if (!await blobClient.ExistsAsync())
                 {
-                    _logger.LogWarning("Unmined map index.html not found in blob storage.");
-                    return NotFound("Map data not found. Please ensure unmined has been run.");
+                    return NotFound();
                 }
 
-                // Generate SAS URL with 7 days expiration for the index.html
-                BlobSasBuilder sasBuilder = new BlobSasBuilder()
-                {
-                    BlobContainerName = containerName,
-                    BlobName = blobName,
-                    Resource = "b", // b = blob
-                    StartsOn = DateTimeOffset.UtcNow.AddMinutes(-5),
-                    ExpiresOn = DateTimeOffset.UtcNow.AddDays(7)
-                };
-                sasBuilder.SetPermissions(BlobSasPermissions.Read);
+                var properties = await blobClient.GetPropertiesAsync();
+                var download = await blobClient.DownloadStreamingAsync();
+                var contentType = string.IsNullOrWhiteSpace(properties.Value.ContentType)
+                    ? "application/octet-stream"
+                    : properties.Value.ContentType;
 
-                Uri sasUri = blobClient.GenerateSasUri(sasBuilder);
-
-                _logger.LogInformation("Generated SAS URL for unmined map.");
-                return Ok(new { url = sasUri.ToString() });
+                Response.Headers.ContentDisposition = "inline";
+                return File(download.Value.Content, contentType);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                _logger.LogError(ex, "Error generating SAS URL for unmined map");
+                _logger.LogError(ex, "Error retrieving unmined map blob {BlobName}", blobName);
                 return StatusCode(500, "Error retrieving map data");
             }
         }
