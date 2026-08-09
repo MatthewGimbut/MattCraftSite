@@ -1,57 +1,64 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { Button } from "@nextui-org/react";
 import { Spinner } from "@nextui-org/spinner";
 
 import '../App.css';
 import '../output.css';
-const imgEndpoint = "api/Unmined";
+const mapEndpoint = "api/Unmined";
 
 export default function UnminedMap() {
-    const [img, setImg] = useState<string>();
+    const [mapUrl, setMapUrl] = useState<string>();
+    const [error, setError] = useState<string>();
     
     useEffect(() => {
-        fetchImage();
+        fetchMapUrl();
     }, []);
 
-    async function fetchImage(): Promise<void> {
-        const response = await fetch(imgEndpoint);
-        console.log(JSON.stringify(response));
-        const data = await response.blob();
-        const imageObjectUrl = URL.createObjectURL(data);
-        setImg(imageObjectUrl);
+    async function fetchMapUrl(): Promise<void> {
+        try {
+            const response = await fetch(mapEndpoint);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            setMapUrl(data.url);
+        } catch (err) {
+            console.error('Error fetching map URL:', err);
+            setError('Failed to load map. Please try again later.');
+        }
     }
 
-    if (!img) {
+    if (error) {
         return (
-            <div className = "p-2 flex justify-center">
+            <div className="p-4 text-center text-red-500">
+                {error}
+            </div>
+        );
+    }
+
+    if (!mapUrl) {
+        return (
+            <div className="p-2 flex justify-center">
                 <Spinner size="lg"></Spinner>
             </div>
         );
     }
 
     return (
-        <div>
-            <TransformWrapper>
-                {({ zoomIn, zoomOut, resetTransform }) => (
-                    <React.Fragment>
-                        <div className="flex justify-center">
-                            <div className="container h-fit px-4 map-size place-content-center">
-                                <div className="tools sm:flex gap-4 place-content-center p-2">
-                                    <Button className="gray-button" onClick={() => zoomIn()}>Zoom In</Button>
-                                    <Button className="gray-button" onClick={() => zoomOut()}>Zoom Out</Button>
-                                    <Button className="gray-button" onClick={() => resetTransform()}>Reset</Button>
-                                </div>
-                                <TransformComponent>
-                                    <img className="p-1" src={img} alt="Map of the current MattCraft server world" />
-                                </TransformComponent>
-                            </div>
-                        </div>
-                    </React.Fragment>
-                )}
-            </TransformWrapper>
+        <div className="flex justify-center">
+            <div className="container h-fit map-size place-content-center">
+                <iframe
+                    src={mapUrl}
+                    style={{
+                        width: '100%',
+                        height: '100vh',
+                        border: 'none',
+                        borderRadius: '0.5rem'
+                    }}
+                    title="Unmined Map"
+                    allowFullScreen
+                />
+            </div>
         </div>
     );
-
 }
